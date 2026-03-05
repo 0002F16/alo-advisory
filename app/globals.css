@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-alo-bg text-alo-text antialiased overflow-x-hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-alo-text;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl leading-snug tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl leading-snug;
+  }
+
+  p {
+    @apply text-sm sm:text-base leading-relaxed text-alo-muted;
+  }
+
+  main > section {
+    @apply py-24 md:py-32;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-alo-panel/80 border border-white/5 rounded-xl shadow-[0_18px_60px_rgba(0,0,0,0.65)];
+  }
+
+  .underline-link {
+    @apply relative inline-flex items-center text-sm font-medium text-alo-text;
+  }
+
+  .underline-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: theme("colors.alo-gold");
+    transform-origin: left;
+    transform: scaleX(0);
+    transition-property: transform;
+    transition-duration: theme("transitionDuration.slow");
+    transition-timing-function: theme("transitionTimingFunction.linear");
+  }
+
+  .underline-link:hover::after,
+  .underline-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
