@@ -2,22 +2,21 @@ import { PageSection } from "@/components/layout/PageSection";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { Button, ButtonLink } from "@/components/common/Button";
 import { Reveal } from "@/components/common/Reveal";
+import { HeroBackground } from "@/components/hero/HeroBackground";
 
 const HERO_HEADLINE =
   "Cross-Border Expansion Into the GCC — Designed Before Execution.";
 const HERO_SUBTEXT =
   "We design regulatory expansion architecture for UK firms entering key GCC jurisdictions.\nLicensing pathway, structure, governance and sequencing — locked before legal spend begins.";
 
+const HERO_IMAGES = ["/hero-bg.jpg", "/hero-bg-2.jpg", "/hero-bg-3.jpg"];
+
 export default function Page() {
   return (
     <>
-      <header className="relative w-screen left-1/2 -translate-x-1/2 pt-16 md:pt-24 pb-24 md:pb-32 min-h-[70vh] flex flex-col justify-center">
-        {/* Full-bleed background: hero image + overlay for text contrast */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/hero-bg.jpg)" }}
-          aria-hidden
-        />
+      <header className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 pt-16 md:pt-24 pb-24 md:pb-32 min-h-[70vh] flex flex-col justify-center overflow-hidden">
+        {/* Full-bleed background: cycling images with slow zoom + overlay */}
+        <HeroBackground images={HERO_IMAGES} />
         <div className="absolute inset-0 bg-alo-bg/70" aria-hidden />
         <div className="container relative z-10 px-6 md:px-8 lg:px-10">
           <Reveal>

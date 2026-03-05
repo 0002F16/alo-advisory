@@ -32,6 +32,15 @@ module.exports = {
       },
       transitionDuration: {
         slow: "400ms"
+      },
+      keyframes: {
+        "hero-zoom": {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(1.08)" }
+        }
+      },
+      animation: {
+        "hero-zoom": "hero-zoom 6s linear forwards"
       }
     }
   },
