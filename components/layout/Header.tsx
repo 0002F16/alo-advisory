@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/common/Button";
+import { BrandLogo } from "@/components/common/BrandLogo";
 
 const NAV_LINKS = [
   { label: "Saudi", href: "/saudi" },
@@ -51,12 +52,7 @@ export default function Header() {
       >
         <div className="container px-6 md:px-8 lg:px-10">
           <div className="flex h-16 items-center justify-between">
-            <Link
-              href="/"
-              className="text-sm font-medium tracking-wide text-alo-text hover:text-alo-gold transition-colors duration-slow ease-linear focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold rounded"
-            >
-              ALO Advisory Group
-            </Link>
+            <BrandLogo />
 
             <nav
               aria-label="Main"

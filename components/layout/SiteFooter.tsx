@@ -1,0 +1,126 @@
+import Link from "next/link";
+import { BrandLogo } from "@/components/common/BrandLogo";
+
+const NAV_LINKS = [
+  { label: "What we do", href: "#what-we-do" },
+  { label: "Coverage", href: "#coverage" },
+  { label: "How we work", href: "#how-we-work" },
+  { label: "Engagements", href: "#engagements" },
+  { label: "Contact", href: "#contact" }
+];
+
+const GCC_MARKETS = [
+  {
+    name: "Saudi Arabia",
+    meta: "Primary institutional focus — Riyadh"
+  },
+  {
+    name: "United Arab Emirates",
+    meta: "Secondary focus — Dubai & Abu Dhabi"
+  }
+];
+
+export function SiteFooter() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="mt-16 border-t border-white/5 bg-[#050c0f]">
+      <div className="container px-6 md:px-8 lg:px-10 py-12 md:py-16">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 md:gap-12">
+          <div className="space-y-4 max-w-xs">
+            <BrandLogo variant="compact" />
+            <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
+              ALO Advisory Group
+            </p>
+            <div className="h-px w-10 bg-alo-gold/80" aria-hidden />
+            <p className="text-sm text-alo-muted">
+              Cross-border expansion architecture for UK-regulated firms
+              entering the GCC. Licensing, governance and sequencing designed
+              before legal spend begins.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
+              Navigation
+            </p>
+            <nav aria-label="Footer primary">
+              <ul className="space-y-2">
+                {NAV_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="underline-link text-alo-muted hover:text-alo-text focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
+              GCC Focus
+            </p>
+            <ul className="space-y-3 text-sm">
+              {GCC_MARKETS.map((market) => (
+                <li key={market.name} className="space-y-1">
+                  <p className="text-alo-text">{market.name}</p>
+                  <p className="text-[0.78rem] text-alo-muted">
+                    {market.meta}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
+              Contact
+            </p>
+            <p className="text-sm text-alo-muted max-w-xs">
+              To discuss GCC expansion, governance architecture or a specific
+              licence pathway, contact the principal directly.
+            </p>
+            <div>
+              <a
+                href="mailto:hello@aloadvisory.com"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[0.8rem] text-alo-text transition-colors duration-slow ease-linear hover:border-alo-gold hover:bg-alo-gold hover:text-black focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
+              >
+                Email ALO
+                <span aria-hidden>↗</span>
+              </a>
+            </div>
+            <p className="text-[0.7rem] text-alo-muted/80">
+              Advisory only. This site does not constitute legal, tax or
+              investment advice.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[0.7rem] text-alo-muted">
+          <p>
+            © {year} ALO Advisory Group. All rights reserved.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              className="text-[0.7rem] underline-link text-alo-muted hover:text-alo-text focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
+            >
+              Terms
+            </button>
+            <button
+              type="button"
+              className="text-[0.7rem] underline-link text-alo-muted hover:text-alo-text focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
+            >
+              Privacy
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
