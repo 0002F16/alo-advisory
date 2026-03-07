@@ -9,7 +9,7 @@ const SECTIONS = [
   {
     id: "regulatory-pathway",
     title: "Regulatory pathway design",
-    body: "Map activities to CMA and SAMA. Define licence pathway and submission sequence—documented, aligned with supervisory priorities.",
+    body: "Map activities to CMA and SAMA. Define licence pathway and submission sequence, documented and aligned with supervisory priorities.",
   },
   {
     id: "structure-governance",
@@ -24,7 +24,7 @@ const SECTIONS = [
   {
     id: "failure-points",
     title: "Common failure points",
-    body: "Misaligned mapping, governance gaps, bad sequencing—we build architecture to avoid them. Design-first, not reaction.",
+    body: "Misaligned mapping, governance gaps, bad sequencing. We build architecture to avoid them. Design-first, not reaction.",
   },
   {
     id: "prevent-drift",
@@ -34,15 +34,15 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Saudi Expansion Architecture — ALO Advisory Group",
+  title: "Saudi Expansion Architecture, ALO Advisory Group",
   description:
-    "Governance-led expansion architecture for UK firms entering the Kingdom. Regulatory pathway design, structure, governance, sequencing and risk control — before legal spend begins.",
+    "Governance-led expansion architecture for UK firms entering the Kingdom. Regulatory pathway design, structure, governance, sequencing and risk control, before legal spend begins.",
 };
 
 export default function SaudiPage() {
   return (
     <>
-      {/* Hero: typographic split, no cycling images — distinct from landing */}
+      {/* Hero: typographic split, no cycling images, distinct from landing */}
       <header
         className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 min-h-[88vh] flex flex-col justify-center overflow-hidden"
         aria-label="Saudi expansion hero"
@@ -78,7 +78,7 @@ export default function SaudiPage() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] lg:text-[3.6rem] leading-[1.12] tracking-tight font-serif text-alo-text mb-6">
-                  Saudi Expansion Architecture — Governance, Sequencing and Risk
+                  Saudi Expansion Architecture: Governance, Sequencing and Risk
                   Control
                 </h1>
               </Reveal>
@@ -92,7 +92,7 @@ export default function SaudiPage() {
                 <p className="text-alo-muted text-base sm:text-lg max-w-xl leading-relaxed mb-10">
                   We design the regulatory and governance architecture for UK
                   firms entering the Kingdom. Pathway, structure, and sequence
-                  are locked before legal spend begins—so execution follows a
+                  are locked before legal spend begins, so execution follows a
                   single blueprint.
                 </p>
               </Reveal>
@@ -104,7 +104,7 @@ export default function SaudiPage() {
             </div>
             <Reveal delay={240} className="hidden lg:block lg:pb-2">
               <p className="text-sm tracking-[0.2em] uppercase text-alo-muted/80 max-w-[220px] text-right">
-                Primary institutional focus — Riyadh
+                Primary institutional focus: Riyadh
               </p>
             </Reveal>
           </div>
@@ -155,7 +155,7 @@ export default function SaudiPage() {
             <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl space-y-3">
                 <h2 className="text-2xl sm:text-[28px] font-serif">
-                  Saudi expansion — designed before execution.
+                  Saudi expansion, designed before execution.
                 </h2>
                 <p>
                   We respond with structure, not generic sales email.

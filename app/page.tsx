@@ -7,7 +7,7 @@ import { HeroBackground } from "@/components/hero/HeroBackground";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const HERO_HEADLINE =
-  "Cross-Border Expansion Into the GCC — Designed Before Execution.";
+  "Cross-Border Expansion Into the GCC. Designed Before Execution.";
 const HERO_SUBTEXT =
   "We design regulatory expansion architecture for UK firms entering key GCC jurisdictions.";
 
@@ -47,6 +47,29 @@ export default function Page() {
             </div>
           </Reveal>
         </div>
+        <a
+          href="#what-we-do"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-alo-gold/80 hover:text-alo-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-alo-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-alo-bg rounded-full"
+          aria-label="Scroll to content"
+        >
+          <span className="text-[0.6rem] tracking-[0.2em] uppercase">
+            Scroll
+          </span>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="animate-bounce"
+            aria-hidden
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </a>
       </header>
 
       <main>
@@ -61,89 +84,82 @@ export default function Page() {
   );
 }
 
-// Stock images: Pexels (free to use). Replace with your own when ready.
-const WHAT_WE_DO_PILLARS: Array<{
-  title: string;
-  subheading: string;
-  image?: string;
-}> = [
+// Bento: hero = Expansion Architecture (priority); supporting pillars = typography-led.
+const WHAT_WE_DO_HERO = {
+  title: "Expansion Architecture",
+  subheading:
+    "We design licensing structure, entity setup and sequencing so execution follows a single blueprint. No guesswork, no overlap. The plan is locked before legal spend begins.",
+  image:
+    "https://images.pexels.com/photos/4427630/pexels-photo-4427630.jpeg?auto=compress&cs=tinysrgb&w=800"
+};
+
+const WHAT_WE_DO_SUPPORTING: Array<{ title: string; subheading: string }> = [
   {
     title: "Readiness Diagnostic",
     subheading:
-      "Assess governance, compliance and operational readiness before you commit to a licence pathway.",
-    image:
-      "https://images.pexels.com/photos/5668886/pexels-photo-5668886.jpeg?auto=compress&cs=tinysrgb&w=600"
-  },
-  {
-    title: "Expansion Architecture",
-    subheading:
-      "Design licensing structure, entity setup and sequencing so execution follows a clear blueprint.",
-    image:
-      "https://images.pexels.com/photos/4427630/pexels-photo-4427630.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "Assess governance, compliance and operational readiness before you commit to a licence pathway."
   },
   {
     title: "Specialist Coordination",
     subheading:
-      "Align legal, tax and local counsel around a single expansion plan to avoid overlap and gaps.",
-    image:
-      "https://images.pexels.com/photos/4491490/pexels-photo-4491490.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "Align legal, tax and local counsel around one expansion plan to avoid overlap and gaps."
   },
   {
     title: "Execution Oversight",
     subheading:
-      "Oversee delivery against the agreed architecture so outcomes match the design.",
-    image:
-      "https://images.pexels.com/photos/10031281/pexels-photo-10031281.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "Oversee delivery against the agreed architecture so outcomes match the design."
   }
 ];
 
 function WhatWeDoSection() {
   return (
-    <PageSection id="what-we-do" aria-label="What we do">
+    <PageSection id="what-we-do" aria-label="What we do" tight>
       <Reveal>
         <SectionHeader title="What We Do" />
       </Reveal>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-[repeat(4,minmax(0,1fr))] md:gap-5 md:items-stretch">
-        {WHAT_WE_DO_PILLARS.map((pillar, index) => (
-          <Reveal
-            key={pillar.title}
-            delay={index * 80}
-            className="min-h-0 flex flex-col"
-          >
-            <article className="panel overflow-hidden flex flex-col h-full transition-all duration-slow ease-linear hover:border-white/10 hover:border-l-alo-gold/40 group">
-              <div className="relative aspect-[2/3] w-full shrink-0 overflow-hidden bg-alo-panel flex-none">
-                {pillar.image ? (
-                  <Image
-                    src={pillar.image}
-                    alt=""
-                    fill
-                    className="object-cover transition-transform duration-slow ease-linear group-hover:scale-[1.02]"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
-                  />
-                ) : null}
-                <div
-                  className="absolute inset-0 bg-gradient-to-b from-alo-bg/20 via-transparent to-alo-bg/40"
-                  aria-hidden
-                />
-                {!pillar.image ? (
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-alo-gold/10"
-                    aria-hidden
-                  />
-                ) : null}
-              </div>
-              <div className="flex flex-col gap-3 p-5 sm:p-6 flex-1 min-h-0">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-alo-text">
-                  {pillar.title}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-3 md:gap-5 md:auto-rows-fr">
+        {/* Hero: Expansion Architecture — spans full left column */}
+        <Reveal className="md:row-span-3 min-h-[320px] md:min-h-0">
+          <article className="panel overflow-hidden flex flex-col h-full min-h-[320px] md:min-h-0 transition-all duration-slow ease-linear hover:border-white/10 hover:border-l-alo-gold/50 group">
+            <div className="relative flex-1 min-h-[200px] md:min-h-[260px] overflow-hidden bg-alo-panel">
+              <Image
+                src={WHAT_WE_DO_HERO.image}
+                alt=""
+                fill
+                className="object-cover transition-transform duration-slow ease-linear group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-alo-bg/80 via-alo-bg/20 to-transparent"
+                aria-hidden
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-alo-text leading-tight tracking-tight max-w-md">
+                  {WHAT_WE_DO_HERO.title}
                 </h3>
                 <div
-                  className="h-px w-8 bg-alo-gold/80 shrink-0"
+                  className="mt-3 h-px w-12 bg-alo-gold shrink-0"
                   aria-hidden="true"
                 />
-                <p className="text-alo-muted text-lg sm:text-xl leading-relaxed">
-                  {pillar.subheading}
-                </p>
               </div>
+            </div>
+            <div className="flex flex-col gap-3 p-5 sm:p-6 md:p-6 flex-shrink-0 border-t border-white/5">
+              <p className="text-alo-muted text-base sm:text-lg leading-relaxed">
+                {WHAT_WE_DO_HERO.subheading}
+              </p>
+            </div>
+          </article>
+        </Reveal>
+        {/* Supporting pillars: text-led bento cells */}
+        {WHAT_WE_DO_SUPPORTING.map((pillar, index) => (
+          <Reveal key={pillar.title} delay={(index + 1) * 60}>
+            <article className="panel flex flex-col justify-center p-5 sm:p-6 transition-all duration-slow ease-linear hover:border-white/10 hover:border-l-alo-gold/30 border border-white/5">
+              <h3 className="text-lg sm:text-xl font-serif text-alo-text leading-tight tracking-tight">
+                {pillar.title}
+              </h3>
+              <p className="mt-2 text-alo-muted text-sm sm:text-base leading-relaxed">
+                {pillar.subheading}
+              </p>
             </article>
           </Reveal>
         ))}
@@ -154,7 +170,7 @@ function WhatWeDoSection() {
 
 function CoverageSection() {
   return (
-    <PageSection id="coverage" aria-label="GCC coverage" borderedTop>
+    <PageSection id="coverage" aria-label="GCC coverage" tight>
       <div className="mt-10 space-y-0">
         {/* Saudi Arabia row: full-width, image left / content right */}
         <Reveal>
@@ -174,18 +190,18 @@ function CoverageSection() {
                 />
               </div>
               <div className="flex items-center bg-[#071a1c] border-t border-b border-white/5 md:border-y-0 md:border-l md:border-white/10">
-                <div className="w-full max-w-xl mx-auto px-6 py-10 sm:px-10 sm:py-12 lg:px-16">
+                <div className="w-full max-w-xl mx-auto px-8 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
                   <p className="text-sm tracking-[0.26em] uppercase text-alo-muted mb-3">
                     Saudi Arabia
                   </p>
                   <h3 className="text-3xl sm:text-4xl md:text-[2.5rem] font-serif text-alo-text mb-4">
-                    Primary institutional focus — Riyadh
+                    Saudi expansion, designed for Riyadh
                   </h3>
                   <p className="text-lg sm:text-xl text-alo-muted max-w-lg">
-                    Governance-led expansion architecture for firms seeking a
-                    durable presence in the Kingdom. We design licensing,
-                    governance and operating pathways that align with local
-                    supervisory expectations before external counsel is briefed.
+                    Governance-led expansion for firms building presence in the
+                    Kingdom. We design licensing and operating pathways aligned
+                    with supervisory expectations, before you brief external
+                    counsel.
                   </p>
                   <div className="mt-6">
                     <ButtonLink
@@ -207,18 +223,17 @@ function CoverageSection() {
           <div className="relative w-screen left-1/2 -translate-x-1/2">
             <article className="grid min-h-[340px] lg:min-h-[440px] md:grid-cols-2">
               <div className="flex items-center bg-[#071a1c] border-t border-b border-white/5 md:border-y-0 md:border-r md:border-white/10">
-                <div className="w-full max-w-xl mx-auto px-6 py-10 sm:px-10 sm:py-12 lg:px-16">
+                <div className="w-full max-w-xl mx-auto px-8 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
                   <p className="text-sm tracking-[0.26em] uppercase text-alo-muted mb-3">
                     United Arab Emirates
                   </p>
                   <h3 className="text-3xl sm:text-4xl md:text-[2.5rem] font-serif text-alo-text mb-4">
-                    Secondary focus — Dubai &amp; Abu Dhabi
+                    One blueprint for Dubai &amp; Abu Dhabi
                   </h3>
                   <p className="text-lg sm:text-xl text-alo-muted max-w-lg">
-                    Structured financial centre entry design across DIFC and
-                    ADGM. We map activities, controlled functions and governance
-                    constructs to regulator expectations, creating a single
-                    expansion blueprint across UAE hubs.
+                    Entry design across DIFC and ADGM. We map activities,
+                    controlled functions and governance to regulator expectations
+                    in a single blueprint for UAE hubs.
                   </p>
                   <div className="mt-6">
                     <ButtonLink
@@ -252,54 +267,66 @@ function CoverageSection() {
   );
 }
 
-function HowWeWorkSection() {
-  const steps = [
-    "Strategic Discovery (Free)",
-    "Readiness Diagnostic (Fixed Fee)",
-    "Expansion Architecture (Fixed Fee)",
-    "Oversight Retainer (Monthly)"
-  ];
+const HOW_WE_WORK_PHASES = [
+  {
+    phase: "Discovery",
+    value:
+      "We align on your ambitions, constraints and timeline so every next step is built on clarity."
+  },
+  {
+    phase: "Readiness",
+    value:
+      "We assess governance, compliance and operations so you know where you stand before committing to a pathway."
+  },
+  {
+    phase: "Architecture",
+    value:
+      "We design licensing, structure and sequencing so execution follows a single blueprint."
+  },
+  {
+    phase: "Oversight",
+    value:
+      "We stay aligned with delivery so outcomes match the design."
+  }
+];
 
+function HowWeWorkSection() {
   return (
-    <PageSection id="how-we-work" aria-label="How we work" borderedTop>
+    <PageSection id="how-we-work" aria-label="How we work" tight>
       <Reveal>
-        <SectionHeader title="How We Work" />
+        <SectionHeader
+          eyebrow="A clear sequence, tailored to your situation."
+          title="How We Work"
+        />
       </Reveal>
-      <div className="hidden md:block">
-        <div className="flex flex-col gap-8">
-          <div className="relative">
-            <div className="absolute left-0 right-0 top-1/2 h-px bg-white/10" />
-            <ol className="relative z-10 grid grid-cols-4 gap-8">
-              {steps.map((label, index) => (
-                <li key={label} className="flex flex-col gap-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-alo-panel border border-white/20 flex items-center justify-center text-sm tracking-[0.18em] uppercase text-alo-muted">
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
-                  </div>
-                  <p className="text-lg sm:text-xl text-alo-text">
-                    {label}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div className="md:hidden">
-        <div className="border-l border-white/10 pl-5 space-y-6">
-          {steps.map((label, index) => (
-            <div key={label} className="relative pl-1">
-              <div className="absolute -left-5 top-1">
-                <div className="w-7 h-7 bg-alo-panel border border-white/20 flex items-center justify-center text-xs tracking-[0.18em] uppercase text-alo-muted">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+      <ol className="relative grid grid-cols-1 gap-0">
+        {/* Vertical sequence line */}
+        <div
+          className="absolute left-[1.125rem] top-0 bottom-0 w-px bg-gradient-to-b from-alo-gold/40 via-alo-gold/20 to-transparent sm:left-8"
+          aria-hidden
+        />
+        {HOW_WE_WORK_PHASES.map((item, index) => (
+          <Reveal key={item.phase} delay={index * 80}>
+            <li className="relative flex gap-6 sm:gap-8 py-8 sm:py-10 first:pt-0 last:pb-0">
+              {/* Step node on the line */}
+              <div
+                className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-alo-gold/60 bg-alo-bg text-[0.7rem] font-medium tracking-wider text-alo-gold sm:h-10 sm:w-10"
+                aria-hidden
+              >
+                {String(index + 1).padStart(2, "0")}
               </div>
-              <p className="text-lg sm:text-xl text-alo-text">{label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+              <div className="flex min-w-0 flex-1 flex-col gap-2 pt-0.5">
+                <h3 className="text-xl sm:text-2xl font-serif text-alo-text leading-tight tracking-tight">
+                  {item.phase}
+                </h3>
+                <p className="text-alo-muted text-base sm:text-lg leading-relaxed max-w-xl">
+                  {item.value}
+                </p>
+              </div>
+            </li>
+          </Reveal>
+        ))}
+      </ol>
     </PageSection>
   );
 }
@@ -350,7 +377,7 @@ function EngagementsSection() {
     <PageSection
       id="engagements"
       aria-label="Representative engagements"
-      borderedTop
+      tight
     >
       <Reveal>
         <SectionHeader
@@ -429,7 +456,7 @@ function FinalCtaSection() {
     <PageSection
       id="contact"
       aria-label="Final call to action"
-      borderedTop
+      tight
     >
       <Reveal>
         <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -446,13 +473,6 @@ function FinalCtaSection() {
             <Button type="button">
               Book a Discovery Call
             </Button>
-            <ButtonLink
-              href="#gcc-readiness"
-              variant="secondaryLink"
-              className="text-base"
-            >
-              Download GCC Readiness Checklist
-            </ButtonLink>
           </div>
         </div>
       </Reveal>

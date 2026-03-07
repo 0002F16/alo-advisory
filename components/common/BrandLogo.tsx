@@ -23,7 +23,7 @@ export function BrandLogo({
     <Link
       href="/"
       className={containerClasses}
-      aria-label="ALO Advisory Group — home"
+      aria-label="ALO Advisory Group, home"
     >
       <div className={`relative ${logoSizeClasses}`}>
         <Image

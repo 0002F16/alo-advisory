@@ -6,10 +6,10 @@ import { Reveal } from "@/components/common/Reveal";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const ENGAGEMENT_STEPS = [
-  "1) Strategic Discovery — Free — 30 minutes",
-  "2) Readiness Diagnostic — £3,000–£5,000 fixed fee",
-  "3) Expansion Architecture — £15,000–£25,000 fixed fee",
-  "4) Oversight Retainer — £2,500–£4,000 per month (min 3 months)"
+  "1) Strategic Discovery: Free, 30 minutes",
+  "2) Readiness Diagnostic: £3,000–£5,000 fixed fee",
+  "3) Expansion Architecture: £15,000–£25,000 fixed fee",
+  "4) Oversight Retainer: £2,500–£4,000 per month (min 3 months)"
 ];
 
 const OVERSIGHT_INCLUDED = [
@@ -31,7 +31,7 @@ const NOT_INCLUDED = [
 ];
 
 export const metadata: Metadata = {
-  title: "Engagement Model & Services — ALO Advisory Group",
+  title: "Engagement Model & Services, ALO Advisory Group",
   description:
     "Strategic Discovery (free), Readiness Diagnostic, Expansion Architecture and Oversight Retainer. Clear pricing and scope for GCC expansion."
 };
@@ -121,7 +121,7 @@ export default function ServicesPage() {
                   Ready to start with a discovery call?
                 </h2>
                 <p>
-                  Free 30-minute Strategic Discovery — no commitment.
+                  Free 30-minute Strategic Discovery, no commitment.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">

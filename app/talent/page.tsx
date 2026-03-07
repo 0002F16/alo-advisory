@@ -16,9 +16,9 @@ const WHAT_WE_OFFER_ITEMS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Operational Build & Talent Enablement — ALO Advisory Group",
+  title: "Operational Build & Talent Enablement, ALO Advisory Group",
   description:
-    "Talent enablement as part of ALO Advisory Group — role scoping, compliance and governance hiring, structured onboarding. Integrated capability, no separate branding."
+    "Talent enablement as part of ALO Advisory Group: role scoping, compliance and governance hiring, structured onboarding. Integrated capability, no separate branding."
 };
 
 export default function TalentPage() {
@@ -42,7 +42,7 @@ export default function TalentPage() {
               />
               <p className="max-w-xl">
                 Talent enablement is an integrated capability within ALO
-                Advisory Group — supporting governance and compliance hiring
+                Advisory Group, supporting governance and compliance hiring
                 once regulatory approval is secured.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">

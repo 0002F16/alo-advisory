@@ -15,12 +15,12 @@ const FOUNDER_ITEMS = [
 ];
 
 const FOUNDER_STATEMENTS = [
-  "Expansion architecture designed before execution—so legal spend follows a blueprint, not guesswork.",
+  "Expansion architecture designed before execution. Legal spend follows a blueprint, not guesswork.",
   "We do not provide legal or tax advice. Legal and tax services are delivered by licensed specialists. ALO Advisory Group designs and oversees expansion architecture."
 ];
 
 export const metadata: Metadata = {
-  title: "Built From Risk & Regulatory Delivery — ALO Advisory Group",
+  title: "Built From Risk & Regulatory Delivery, ALO Advisory Group",
   description:
     "Founder background in risk and regulatory project delivery, governance programmes and cross-border sequencing. We design and oversee expansion architecture; we do not provide legal or tax advice."
 };
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero: typographic/editorial — distinct from home (no image cycling) */}
+      {/* Hero: typographic/editorial, distinct from home (no image cycling) */}
       <header
         className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 min-h-[70vh] flex flex-col justify-center overflow-hidden"
         aria-label="About ALO hero"
@@ -72,7 +72,7 @@ export default function AboutPage() {
               <p className="text-alo-muted text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
                 ALO Advisory Group designs expansion architecture for UK firms
                 entering the GCC. Our approach is rooted in risk and regulatory
-                delivery—structure and sequence are locked before legal spend
+                delivery. Structure and sequence are locked before legal spend
                 begins.
               </p>
             </Reveal>
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 <p className="text-alo-text text-base sm:text-lg max-w-2xl leading-relaxed">
                   ALO Advisory Group was founded from deep experience in risk and
                   regulatory project delivery. We exist because expansion into the
-                  GCC—particularly Saudi Arabia and the UAE—often fails when firms
+                  GCC, particularly Saudi Arabia and the UAE, often fails when firms
                   rush to legal and tax counsel without a clear architecture.
                   Governance, licensing pathway, and sequencing must be designed
                   first. We design that architecture and oversee execution against
@@ -108,7 +108,7 @@ export default function AboutPage() {
                   We deliver four pillars: Readiness Diagnostic, Expansion
                   Architecture, Specialist Coordination, and Execution Oversight.
                   Each is designed to lock structure, governance, and sequence
-                  before legal spend begins—so your advisers execute against a
+                  before legal spend begins, so your advisers execute against a
                   blueprint.
                 </p>
               </Reveal>

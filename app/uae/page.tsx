@@ -9,7 +9,7 @@ const SECTIONS = [
   {
     id: "licence-category",
     title: "Licence category alignment",
-    body: "Map activities to DFSA/FSRA categories. Define licence type and scope—documented, aligned with regulator expectations.",
+    body: "Map activities to DFSA/FSRA categories. Define licence type and scope, documented and aligned with regulator expectations.",
   },
   {
     id: "controlled-functions",
@@ -29,15 +29,15 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "UAE Expansion Architecture — ALO Advisory Group",
+  title: "UAE Expansion Architecture, ALO Advisory Group",
   description:
-    "Structured financial centre entry design for DIFC and ADGM. Licence category alignment, controlled functions and substance requirements — designed before execution."
+    "Structured financial centre entry design for DIFC and ADGM. Licence category alignment, controlled functions and substance requirements, designed before execution."
 };
 
 export default function UaePage() {
   return (
     <>
-      {/* Hero: typographic split — Saudi-style design */}
+      {/* Hero: typographic split, Saudi-style design */}
       <header
         className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 min-h-[88vh] flex flex-col justify-center overflow-hidden"
         aria-label="UAE expansion hero"
@@ -73,7 +73,7 @@ export default function UaePage() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] lg:text-[3.6rem] leading-[1.12] tracking-tight font-serif text-alo-text mb-6">
-                  UAE Expansion Architecture — Structured Financial Centre Entry
+                  UAE Expansion Architecture: Structured Financial Centre Entry
                 </h1>
               </Reveal>
               <Reveal delay={160}>
@@ -86,7 +86,7 @@ export default function UaePage() {
                 <p className="text-alo-muted text-base sm:text-lg max-w-xl leading-relaxed mb-10">
                   Structured financial centre entry design across DIFC and
                   ADGM. Activities, controlled functions and governance mapped
-                  to regulator expectations—locked before execution.
+                  to regulator expectations, locked before execution.
                 </p>
               </Reveal>
               <Reveal delay={280}>
@@ -97,7 +97,7 @@ export default function UaePage() {
             </div>
             <Reveal delay={240} className="hidden lg:block lg:pb-2">
               <p className="text-sm tracking-[0.2em] uppercase text-alo-muted/80 max-w-[220px] text-right">
-                Secondary focus — Dubai &amp; Abu Dhabi
+                Secondary focus: Dubai &amp; Abu Dhabi
               </p>
             </Reveal>
           </div>
@@ -147,7 +147,7 @@ export default function UaePage() {
             <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl space-y-3">
                 <h2 className="text-2xl sm:text-[28px] font-serif">
-                  UAE expansion — designed before execution.
+                  UAE expansion, designed before execution.
                 </h2>
                 <p>
                   We respond with structure, not generic sales email.
