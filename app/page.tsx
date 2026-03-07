@@ -9,7 +9,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 const HERO_HEADLINE =
   "Cross-Border Expansion Into the GCC — Designed Before Execution.";
 const HERO_SUBTEXT =
-  "We design regulatory expansion architecture for UK firms entering key GCC jurisdictions.\nLicensing pathway, structure, governance and sequencing — locked before legal spend begins.";
+  "We design regulatory expansion architecture for UK firms entering key GCC jurisdictions.";
 
 const HERO_IMAGES = ["/hero-bg.jpg", "/hero-bg-2.jpg", "/hero-bg-3.jpg"];
 
@@ -23,15 +23,17 @@ export default function Page() {
         <div className="container relative z-10 px-6 md:px-8 lg:px-10">
           <Reveal>
             <div className="max-w-3xl">
-              <p className="text-xs tracking-[0.22em] uppercase text-alo-muted mb-4">
+              <p className="text-sm tracking-[0.22em] uppercase text-alo-muted mb-4">
                 ALO Advisory Group
               </p>
-              <h1 className="mb-6 whitespace-pre-line">{HERO_HEADLINE}</h1>
+              <h1 className="text-6xl sm:text-7xl md:text-[4.5rem] lg:text-[5rem] mb-6 whitespace-pre-line leading-tight tracking-tight">
+                {HERO_HEADLINE}
+              </h1>
               <div
                 className="h-px w-16 bg-alo-gold mb-8"
                 aria-hidden="true"
               />
-              <p className="whitespace-pre-line max-w-xl">
+              <p className="text-xl sm:text-2xl md:text-3xl whitespace-pre-line max-w-xl text-alo-muted">
                 {HERO_SUBTEXT}
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
@@ -131,14 +133,14 @@ function WhatWeDoSection() {
                 ) : null}
               </div>
               <div className="flex flex-col gap-3 p-5 sm:p-6 flex-1 min-h-0">
-                <h3 className="text-base sm:text-lg font-serif text-alo-text">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-alo-text">
                   {pillar.title}
                 </h3>
                 <div
                   className="h-px w-8 bg-alo-gold/80 shrink-0"
                   aria-hidden="true"
                 />
-                <p className="text-alo-muted text-sm sm:text-[0.95rem] leading-relaxed">
+                <p className="text-alo-muted text-lg sm:text-xl leading-relaxed">
                   {pillar.subheading}
                 </p>
               </div>
@@ -173,13 +175,13 @@ function CoverageSection() {
               </div>
               <div className="flex items-center bg-[#071a1c] border-t border-b border-white/5 md:border-y-0 md:border-l md:border-white/10">
                 <div className="w-full max-w-xl mx-auto px-6 py-10 sm:px-10 sm:py-12 lg:px-16">
-                  <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted mb-3">
+                  <p className="text-sm tracking-[0.26em] uppercase text-alo-muted mb-3">
                     Saudi Arabia
                   </p>
-                  <h3 className="text-2xl sm:text-[26px] font-serif text-alo-text mb-4">
+                  <h3 className="text-3xl sm:text-4xl md:text-[2.5rem] font-serif text-alo-text mb-4">
                     Primary institutional focus — Riyadh
                   </h3>
-                  <p className="text-sm sm:text-[0.95rem] text-alo-muted max-w-lg">
+                  <p className="text-lg sm:text-xl text-alo-muted max-w-lg">
                     Governance-led expansion architecture for firms seeking a
                     durable presence in the Kingdom. We design licensing,
                     governance and operating pathways that align with local
@@ -188,10 +190,10 @@ function CoverageSection() {
                   <div className="mt-6">
                     <ButtonLink
                       href="#contact"
-                      variant="primary"
-                      className="text-[0.8rem] sm:text-sm"
-                    >
-                      Discuss Saudi expansion
+                    variant="primary"
+                    className="text-sm sm:text-base"
+                  >
+                    Discuss Saudi expansion
                     </ButtonLink>
                   </div>
                 </div>
@@ -206,13 +208,13 @@ function CoverageSection() {
             <article className="grid min-h-[340px] lg:min-h-[440px] md:grid-cols-2">
               <div className="flex items-center bg-[#071a1c] border-t border-b border-white/5 md:border-y-0 md:border-r md:border-white/10">
                 <div className="w-full max-w-xl mx-auto px-6 py-10 sm:px-10 sm:py-12 lg:px-16">
-                  <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted mb-3">
+                  <p className="text-sm tracking-[0.26em] uppercase text-alo-muted mb-3">
                     United Arab Emirates
                   </p>
-                  <h3 className="text-2xl sm:text-[26px] font-serif text-alo-text mb-4">
+                  <h3 className="text-3xl sm:text-4xl md:text-[2.5rem] font-serif text-alo-text mb-4">
                     Secondary focus — Dubai &amp; Abu Dhabi
                   </h3>
-                  <p className="text-sm sm:text-[0.95rem] text-alo-muted max-w-lg">
+                  <p className="text-lg sm:text-xl text-alo-muted max-w-lg">
                     Structured financial centre entry design across DIFC and
                     ADGM. We map activities, controlled functions and governance
                     constructs to regulator expectations, creating a single
@@ -221,10 +223,10 @@ function CoverageSection() {
                   <div className="mt-6">
                     <ButtonLink
                       href="#contact"
-                      variant="primary"
-                      className="text-[0.8rem] sm:text-sm"
-                    >
-                      Explore UAE options
+                    variant="primary"
+                    className="text-sm sm:text-base"
+                  >
+                    Explore UAE options
                     </ButtonLink>
                   </div>
                 </div>
@@ -271,11 +273,11 @@ function HowWeWorkSection() {
               {steps.map((label, index) => (
                 <li key={label} className="flex flex-col gap-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-alo-panel border border-white/20 flex items-center justify-center text-xs tracking-[0.18em] uppercase text-alo-muted">
+                    <div className="w-8 h-8 bg-alo-panel border border-white/20 flex items-center justify-center text-sm tracking-[0.18em] uppercase text-alo-muted">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                   </div>
-                  <p className="text-sm sm:text-[0.95rem] text-alo-text">
+                  <p className="text-lg sm:text-xl text-alo-text">
                     {label}
                   </p>
                 </li>
@@ -289,11 +291,11 @@ function HowWeWorkSection() {
           {steps.map((label, index) => (
             <div key={label} className="relative pl-1">
               <div className="absolute -left-5 top-1">
-                <div className="w-7 h-7 bg-alo-panel border border-white/20 flex items-center justify-center text-[0.65rem] tracking-[0.18em] uppercase text-alo-muted">
+                <div className="w-7 h-7 bg-alo-panel border border-white/20 flex items-center justify-center text-xs tracking-[0.18em] uppercase text-alo-muted">
                   {String(index + 1).padStart(2, "0")}
                 </div>
               </div>
-              <p className="text-sm text-alo-text">{label}</p>
+              <p className="text-lg sm:text-xl text-alo-text">{label}</p>
             </div>
           ))}
         </div>
@@ -302,38 +304,48 @@ function HowWeWorkSection() {
   );
 }
 
-function EngagementsSection() {
-  const cases = [
-    {
-      title: "Case Study 1 – UK Wealth Advisory → Saudi",
-      items: [
-        "Designed licence mapping assumptions",
-        "Governance alignment",
-        "Sequencing roadmap",
-        "Counsel brief pack",
-        "Outcome: Blueprint approved before legal submission"
-      ]
-    },
-    {
-      title: "Case Study 2 – UK Fintech → UAE",
-      items: [
-        "Activity mapping to DFSA categories",
-        "Controlled function design",
-        "Structured engagement plan",
-        "Outcome: Clear regulator pathway defined pre-legal"
-      ]
-    },
-    {
-      title: "Case Study 3 – Cross-Border Governance Uplift",
-      items: [
-        "Operating model design",
-        "Compliance structure",
-        "Risk register",
-        "Outcome: Internal readiness improved before submission"
-      ]
-    }
-  ];
+const REPRESENTATIVE_CASES: Array<{
+  title: string;
+  image: string;
+  subheadings: string[];
+}> = [
+  {
+    title: "UK Wealth Advisory → Saudi",
+    image:
+      "https://images.pexels.com/photos/5668886/pexels-photo-5668886.jpeg?auto=compress&cs=tinysrgb&w=600",
+    subheadings: [
+      "Designed licence mapping assumptions",
+      "Governance alignment",
+      "Sequencing roadmap",
+      "Counsel brief pack",
+      "Outcome: Blueprint approved before legal submission"
+    ]
+  },
+  {
+    title: "UK Fintech → UAE",
+    image:
+      "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600",
+    subheadings: [
+      "Activity mapping to DFSA categories",
+      "Controlled function design",
+      "Structured engagement plan",
+      "Outcome: Clear regulator pathway defined pre-legal"
+    ]
+  },
+  {
+    title: "Cross-Border Governance Uplift",
+    image:
+      "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600",
+    subheadings: [
+      "Operating model design",
+      "Compliance structure",
+      "Risk register",
+      "Outcome: Internal readiness improved before submission"
+    ]
+  }
+];
 
+function EngagementsSection() {
   return (
     <PageSection
       id="engagements"
@@ -343,33 +355,67 @@ function EngagementsSection() {
       <Reveal>
         <SectionHeader
           eyebrow="Representative and anonymised engagements."
-          title="Representative Engagements"
+          title="Case Studies"
         />
       </Reveal>
-      <div className="space-y-6">
-        {cases.map((caseStudy, index) => (
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 md:gap-8">
+        {REPRESENTATIVE_CASES.map((caseStudy, index) => (
           <Reveal key={caseStudy.title} delay={index * 80}>
-            <article className="panel p-6 sm:p-7">
-              <h3 className="text-lg sm:text-xl font-serif text-alo-text mb-4">
-                {caseStudy.title}
-              </h3>
-              <ul className="space-y-2 text-sm sm:text-[0.95rem] text-alo-muted">
-                {caseStudy.items.map((item) => {
-                  const isOutcome = item.startsWith("Outcome:");
-                  if (isOutcome) {
-                    const [, rest] = item.split("Outcome:");
+            <article className="group panel flex flex-col overflow-hidden transition-all duration-slow ease-linear hover:border-white/10 hover:border-t-alo-gold/40">
+              <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-alo-panel">
+                <Image
+                  src={caseStudy.image}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-slow ease-linear group-hover:scale-[1.03]"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-alo-bg/70 via-transparent to-transparent"
+                  aria-hidden
+                />
+                <div className="absolute top-4 left-4 sm:top-5 sm:left-5">
+                  <span className="text-[0.65rem] tracking-[0.22em] uppercase text-alo-gold/90 font-medium">
+                    Case Study {index + 1}
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 p-5 sm:p-6 flex-1 min-h-0">
+                <h3 className="text-xl sm:text-2xl font-serif text-alo-text leading-tight tracking-tight">
+                  {caseStudy.title}
+                </h3>
+                <div
+                  className="h-px w-10 bg-alo-gold/80 shrink-0"
+                  aria-hidden="true"
+                />
+                <ul className="space-y-3 text-base sm:text-lg text-alo-muted">
+                  {caseStudy.subheadings.map((item) => {
+                    const isOutcome = item.startsWith("Outcome:");
+                    if (isOutcome) {
+                      const [, rest] = item.split("Outcome:");
+                      return (
+                        <li
+                          key={item}
+                          className="pt-2 border-t border-white/5 text-alo-text"
+                        >
+                          <span className="font-medium text-alo-gold/90">
+                            Outcome
+                          </span>
+                          <span className="text-alo-muted">{rest}</span>
+                        </li>
+                      );
+                    }
                     return (
-                      <li key={item}>
-                        <span className="font-medium text-alo-text">
-                          Outcome:
-                        </span>
-                        <span>{rest}</span>
+                      <li
+                        key={item}
+                        className="font-medium text-alo-text/90 text-base"
+                      >
+                        {item}
                       </li>
                     );
-                  }
-                  return <li key={item}>• {item}</li>;
-                })}
-              </ul>
+                  })}
+                </ul>
+              </div>
             </article>
           </Reveal>
         ))}
@@ -388,10 +434,10 @@ function FinalCtaSection() {
       <Reveal>
         <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl space-y-3">
-            <h2 className="text-2xl sm:text-[28px] font-serif">
+            <h2 className="text-3xl sm:text-4xl md:text-[2.25rem] font-serif leading-tight tracking-tight">
               Cross-border expansion, designed before execution.
             </h2>
-            <p>
+            <p className="text-lg sm:text-xl text-alo-muted">
               Licensing pathway, structure, governance and sequencing locked
               before legal spend begins.
             </p>
@@ -403,7 +449,7 @@ function FinalCtaSection() {
             <ButtonLink
               href="#gcc-readiness"
               variant="secondaryLink"
-              className="text-sm"
+              className="text-base"
             >
               Download GCC Readiness Checklist
             </ButtonLink>

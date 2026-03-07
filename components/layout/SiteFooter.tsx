@@ -9,24 +9,13 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" }
 ];
 
-const GCC_MARKETS = [
-  {
-    name: "Saudi Arabia",
-    meta: "Primary institutional focus — Riyadh"
-  },
-  {
-    name: "United Arab Emirates",
-    meta: "Secondary focus — Dubai & Abu Dhabi"
-  }
-];
-
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-16 border-t border-white/5 bg-[#050c0f]">
       <div className="container px-6 md:px-8 lg:px-10 py-12 md:py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 md:gap-12">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 md:gap-12">
           <div className="space-y-4 max-w-xs">
             <BrandLogo variant="compact" />
             <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
@@ -58,22 +47,6 @@ export function SiteFooter() {
                 ))}
               </ul>
             </nav>
-          </div>
-
-          <div className="space-y-4">
-            <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
-              GCC Focus
-            </p>
-            <ul className="space-y-3 text-sm">
-              {GCC_MARKETS.map((market) => (
-                <li key={market.name} className="space-y-1">
-                  <p className="text-alo-text">{market.name}</p>
-                  <p className="text-[0.78rem] text-alo-muted">
-                    {market.meta}
-                  </p>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div className="space-y-4">

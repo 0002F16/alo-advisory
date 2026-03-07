@@ -117,9 +117,7 @@ function ContactForm() {
           Share the outline. We’ll respond with structure.
         </h1>
         <p className="text-sm sm:text-[0.95rem] text-alo-muted max-w-xl">
-          Send a short description of your current position and GCC interest.
-          We will respond with a proposed diagnostic or architecture pathway,
-          not a generic sales email.
+          Tell us a bit about your challenges and GCC ambitions.
         </p>
       </div>
 
@@ -128,12 +126,11 @@ function ContactForm() {
           role="status"
           className="rounded-lg border border-alo-gold/60 bg-alo-gold/5 px-4 py-3 text-sm text-alo-text"
         >
-          Thank you. Your outline has been recorded. We will review and respond
-          directly to the email provided.
+          Thanks. We'll review and respond to the email you provided.
         </div>
       ) : null}
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="space-y-4">
         <Field
           label="Name"
           id={`${formId}-name`}
@@ -171,7 +168,7 @@ function ContactForm() {
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <div className="space-y-4">
         <Field
           label="Email"
           id={`${formId}-email`}
@@ -219,7 +216,7 @@ function ContactForm() {
         id={`${formId}-description`}
         required
         error={errors.description}
-        hint="One or two paragraphs on your current FCA position, activities and GCC intent."
+        hint="FCA position, activities, and GCC intent."
       >
         <textarea
           id={`${formId}-description`}
@@ -232,15 +229,9 @@ function ContactForm() {
         />
       </Field>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <Button type="submit" disabled={isDisabled}>
-          {status === "submitting" ? "Sending…" : "Send outline"}
-        </Button>
-        <p className="text-[0.7rem] text-alo-muted max-w-xs">
-          No mailing lists. No automated follow-up. A single considered
-          response, or a note if we are not the right fit.
-        </p>
-      </div>
+      <Button type="submit" disabled={isDisabled} className="w-full">
+        {status === "submitting" ? "Sending…" : "Start the conversation"}
+      </Button>
     </form>
   );
 }
@@ -298,7 +289,7 @@ function WhatToPreparePanel() {
           What to prepare
         </p>
         <h2 className="text-lg sm:text-xl md:text-[22px] font-serif">
-          A short brief is enough. These three anchors help.
+          A short brief is enough.
         </h2>
         <div
           className="h-px w-10 bg-alo-gold/80"
@@ -307,39 +298,26 @@ function WhatToPreparePanel() {
       </div>
 
       <p className="text-sm sm:text-[0.95rem] text-alo-muted">
-        You do not need a full strategy paper. A simple outline anchored on the
-        points below allows us to respond with a precise view of feasibility and
-        next steps.
+        Simple outline on the points below. We respond with feasibility and next steps.
       </p>
 
       <ul className="space-y-4 text-sm sm:text-[0.95rem]">
         <li className="space-y-1.5">
           <p className="font-medium text-alo-text">FCA status</p>
-          <p className="text-alo-muted">
-            Current authorisations, permissions and whether you operate as a
-            principal or appointed representative.
-          </p>
+          <p className="text-alo-muted">Your authorisations and whether you're a principal or AR.</p>
         </li>
         <li className="space-y-1.5">
           <p className="font-medium text-alo-text">Activity scope</p>
-          <p className="text-alo-muted">
-            The activities you wish to undertake in GCC markets and the client
-            segments you intend to serve.
-          </p>
+          <p className="text-alo-muted">Activities and client segments in GCC markets.</p>
         </li>
         <li className="space-y-1.5">
           <p className="font-medium text-alo-text">Structure chart</p>
-          <p className="text-alo-muted">
-            A simple view of your current legal and operating structure,
-            including any existing branches or subsidiaries.
-          </p>
+          <p className="text-alo-muted">Legal and operating structure, branches, subsidiaries.</p>
         </li>
       </ul>
 
       <p className="text-[0.75rem] text-alo-muted/80 border-t border-white/5 pt-4">
-        Information shared through this form is used solely to assess fit and
-        outline potential engagement pathways. It is not treated as a formal
-        legal, tax or regulatory instruction.
+        Used only to assess fit. Not formal legal, tax or regulatory advice.
       </p>
     </div>
   );

@@ -25,7 +25,7 @@ module.exports = {
       },
       fontFamily: {
         serif: ["\"Playfair Display\"", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"]
+        sans: ["DM Sans", "system-ui", "sans-serif"]
       },
       transitionTimingFunction: {
         linear: "linear"

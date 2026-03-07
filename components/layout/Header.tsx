@@ -10,8 +10,7 @@ const NAV_LINKS = [
   { label: "UAE", href: "/uae" },
   { label: "Services", href: "/services" },
   { label: "Talent", href: "/talent" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" }
+  { label: "About", href: "/about" }
 ] as const;
 
 const MOBILE_MENU_ID = "main-nav-mobile";
@@ -72,7 +71,7 @@ export default function Header() {
               </ul>
               <div className="ml-4">
                 <ButtonLink href="/contact" variant="primary">
-                  Book a Discovery Call
+                  Get in Touch
                 </ButtonLink>
               </div>
             </nav>
@@ -129,7 +128,7 @@ export default function Header() {
           </ul>
           <div className="mt-auto pt-12 pb-8">
             <ButtonLink href="/contact" variant="primary" className="w-full sm:w-auto">
-              Book a Discovery Call
+              Get in Touch
             </ButtonLink>
           </div>
         </div>
