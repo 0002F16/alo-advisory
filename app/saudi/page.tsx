@@ -9,27 +9,27 @@ const SECTIONS = [
   {
     id: "regulatory-pathway",
     title: "Regulatory pathway design",
-    body: "We map your intended activities to CMA and SAMA expectations, then define a clear licence pathway and submission sequence. No guesswork—a documented route from current state to authorised presence in the Kingdom, aligned with local supervisory priorities and timelines.",
+    body: "Map activities to CMA and SAMA. Define licence pathway and submission sequence—documented, aligned with supervisory priorities.",
   },
   {
     id: "structure-governance",
     title: "Structure & governance",
-    body: "Entity structure, board composition, and governance frameworks are designed to meet Saudi standards before you engage local counsel. We lock operating model, delegated authorities, and compliance ownership so execution follows a single blueprint and avoids costly rework.",
+    body: "Entity, board, and governance frameworks set before counsel. Operating model, delegated authorities, and compliance ownership locked.",
   },
   {
     id: "sequencing-roadmap",
     title: "Sequencing roadmap",
-    body: "Expansion fails when steps are out of order. We produce a phased roadmap: what must be true before application, what runs in parallel, and what follows approval. Timelines, dependencies, and decision points are explicit so your team and advisers work to one plan.",
+    body: "Phased plan: pre-application, parallel tracks, post-approval. Clear timelines and decision points. One plan for team and advisers.",
   },
   {
     id: "failure-points",
     title: "Common failure points",
-    body: "We address the patterns that derail Saudi entries: misaligned activity mapping, governance gaps that surface in review, and sequencing that triggers delay or rejection. Our architecture is built to avoid these failure points by design, not by reaction.",
+    body: "Misaligned mapping, governance gaps, bad sequencing—we build architecture to avoid them. Design-first, not reaction.",
   },
   {
     id: "prevent-drift",
     title: "How we prevent drift",
-    body: "Plans drift when ownership is unclear or when legal and execution run ahead of the agreed architecture. We define clear handoffs, decision rights, and checkpoints so the expansion stays aligned with the design—from discovery through to post-licence operation.",
+    body: "Clear handoffs, decision rights, and checkpoints. Expansion stays aligned from discovery through post-licence.",
   },
 ];
 
@@ -119,30 +119,31 @@ export default function SaudiPage() {
               title="What we deliver"
             />
           </Reveal>
-          <div className="space-y-0">
+          <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:gap-6">
             {SECTIONS.map((section, index) => (
               <Reveal key={section.id} delay={index * 60}>
                 <article
                   id={section.id}
-                  className="border-l-2 border-alo-gold/50 pl-6 sm:pl-8 py-8 sm:py-10 group hover:border-alo-gold/80 transition-colors duration-slow"
+                  className={`group relative overflow-hidden rounded-xl border border-white/5 bg-alo-panel/60 p-6 sm:p-7 shadow-[0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out hover:border-alo-gold/30 hover:bg-alo-panel/80 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_0_1px_rgba(198,167,94,0.1)] ${index === 4 ? "md:col-span-2" : ""}`}
                 >
-                  <h3 className="text-xl sm:text-2xl font-serif text-alo-text mb-4">
+                  {/* Step number */}
+                  <span
+                    className="absolute top-6 right-6 text-[0.65rem] font-medium tracking-[0.2em] text-alo-gold/50 transition-colors duration-300 group-hover:text-alo-gold/80"
+                    aria-hidden
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="h-px w-12 bg-alo-gold/70 mb-5" aria-hidden />
+                  <h3 className="text-xl sm:text-[1.35rem] font-serif text-alo-text mb-3 pr-12">
                     {section.title}
                   </h3>
-                  <p className="text-alo-muted max-w-2xl leading-relaxed">
+                  <p className="text-alo-muted text-[0.95rem] leading-relaxed">
                     {section.body}
                   </p>
                 </article>
               </Reveal>
             ))}
           </div>
-          <Reveal delay={320}>
-            <div className="mt-12">
-              <ButtonLink href="/contact" variant="primary">
-                Book Saudi Discovery Call
-              </ButtonLink>
-            </div>
-          </Reveal>
         </PageSection>
 
         <PageSection
