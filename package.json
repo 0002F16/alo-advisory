@@ -2,6 +2,9 @@
   "name": "alo-advisory-group-site",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +13,7 @@
     "extract-pdf": "node scripts/extract-pdf-text.js"
   },
   "dependencies": {
-    "next": "15.0.3",
+    "next": "15.0.5",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
@@ -23,6 +26,6 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "15.0.3"
+    "eslint-config-next": "15.0.5"
   }
 }

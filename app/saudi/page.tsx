@@ -5,7 +5,7 @@ import { ButtonLink } from "@/components/common/Button";
 import { Reveal } from "@/components/common/Reveal";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
-const SECTIONS = [
+const OFFERINGS = [
   {
     id: "regulatory-pathway",
     title: "Regulatory pathway design",
@@ -21,17 +21,10 @@ const SECTIONS = [
     title: "Sequencing roadmap",
     body: "Phased plan: pre-application, parallel tracks, post-approval. Clear timelines and decision points. One plan for team and advisers.",
   },
-  {
-    id: "failure-points",
-    title: "Common failure points",
-    body: "Misaligned mapping, governance gaps, bad sequencing. We build architecture to avoid them. Design-first, not reaction.",
-  },
-  {
-    id: "prevent-drift",
-    title: "How we prevent drift",
-    body: "Clear handoffs, decision rights, and checkpoints. Expansion stays aligned from discovery through post-licence.",
-  },
 ];
+
+const RISK_CONTROL_BODY =
+  "Saudi entries often fail on misaligned mapping, governance gaps, and bad sequencing. We build architecture to avoid them—design-first, not reaction. Clear handoffs, decision rights, and checkpoints keep the expansion aligned from discovery through post-licence.";
 
 export const metadata: Metadata = {
   title: "Saudi Expansion Architecture, ALO Advisory Group",
@@ -119,14 +112,13 @@ export default function SaudiPage() {
               title="What we deliver"
             />
           </Reveal>
-          <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:gap-6">
-            {SECTIONS.map((section, index) => (
-              <Reveal key={section.id} delay={index * 60}>
+          <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-3 md:items-stretch lg:gap-6">
+            {OFFERINGS.map((section, index) => (
+              <Reveal key={section.id} delay={index * 60} className="md:h-full">
                 <article
                   id={section.id}
-                  className={`group relative overflow-hidden rounded-xl border border-white/5 bg-alo-panel/60 p-6 sm:p-7 shadow-[0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out hover:border-alo-gold/30 hover:bg-alo-panel/80 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_0_1px_rgba(198,167,94,0.1)] ${index === 4 ? "md:col-span-2" : ""}`}
+                  className="group relative flex flex-col overflow-hidden rounded-xl border border-white/5 bg-alo-panel/60 p-6 sm:p-7 shadow-[0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out hover:border-alo-gold/30 hover:bg-alo-panel/80 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6),0_0_0_1px_rgba(198,167,94,0.1)] md:h-full"
                 >
-                  {/* Step number */}
                   <span
                     className="absolute top-6 right-6 text-[0.65rem] font-medium tracking-[0.2em] text-alo-gold/50 transition-colors duration-300 group-hover:text-alo-gold/80"
                     aria-hidden
@@ -147,9 +139,32 @@ export default function SaudiPage() {
         </PageSection>
 
         <PageSection
+          id="risk-control"
+          aria-label="Failure points and drift prevention"
+          tighter
+        >
+          <Reveal>
+            <div className="relative overflow-hidden rounded-xl border border-white/5 bg-alo-panel/40 px-6 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12">
+              <div
+                className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-alo-gold/60 via-alo-gold/40 to-alo-gold/60"
+                aria-hidden
+              />
+              <div className="pl-6 sm:pl-8">
+                <h2 className="text-xl sm:text-2xl font-serif text-alo-text mb-5">
+                  Failure points and drift prevention
+                </h2>
+                <div className="h-px w-12 bg-alo-gold/70 mb-6" aria-hidden />
+                <p className="text-alo-muted text-[0.95rem] sm:text-base leading-relaxed max-w-2xl">
+                  {RISK_CONTROL_BODY}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </PageSection>
+
+        <PageSection
           id="contact"
           aria-label="Final call to action"
-          borderedTop
         >
           <Reveal>
             <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">

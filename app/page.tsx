@@ -180,8 +180,8 @@ function CoverageSection() {
             <article className="grid min-h-[340px] lg:min-h-[440px] md:grid-cols-2">
               <div className="relative h-80 md:h-auto overflow-hidden bg-alo-panel">
                 <Image
-                  src="https://images.pexels.com/photos/167404/pexels-photo-167404.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Riyadh financial district skyline at dusk"
+                  src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="Professional business handshake"
                   fill
                   className="object-cover scale-105 md:scale-100 md:hover:scale-[1.03] transition-transform duration-slow ease-linear"
                   sizes="(max-width: 768px) 100vw, 50vw"

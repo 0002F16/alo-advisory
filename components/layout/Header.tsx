@@ -49,7 +49,7 @@ export default function Header() {
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        <div className="container px-6 md:px-8 lg:px-10">
+        <div className="content-width">
           <div className="flex h-16 items-center justify-between">
             <BrandLogo />
 
@@ -112,7 +112,7 @@ export default function Header() {
         style={{ paddingTop: "5rem" }}
         aria-hidden={!menuOpen}
       >
-        <div className="container px-6 md:px-8 flex flex-col h-full">
+        <div className="content-width flex flex-col h-full">
           <ul className="flex flex-col gap-6">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={href}>

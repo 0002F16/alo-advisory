@@ -17,7 +17,7 @@ export function BrandLogo({
   const logoSizeClasses =
     variant === "compact"
       ? "h-8 w-8"
-      : "h-8 sm:h-9 w-32 sm:w-40";
+      : "h-11 sm:h-12 w-44 sm:w-52";
 
   return (
     <Link
@@ -30,7 +30,7 @@ export function BrandLogo({
           src="/alo-logo.png"
           alt="ALO Advisory Group logo"
           fill
-          sizes="(max-width: 640px) 140px, 180px"
+          sizes="(max-width: 640px) 180px, 220px"
           className="object-contain"
           priority
         />
