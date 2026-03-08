@@ -13,7 +13,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 border-t border-white/5 bg-[#050c0f]">
+    <footer className="mt-16 w-screen relative left-1/2 -translate-x-1/2 border-t border-white/5 bg-[#050c0f]">
       <div className="container px-6 md:px-8 lg:px-10 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 md:gap-12">
           <div className="space-y-4 max-w-xs">

@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PageSection } from "@/components/layout/PageSection";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { Button, ButtonLink } from "@/components/common/Button";
 import { Reveal } from "@/components/common/Reveal";
 import { HeroBackground } from "@/components/hero/HeroBackground";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CASE_STUDIES } from "@/lib/case-studies";
 
 const HERO_HEADLINE =
   "Cross-Border Expansion Into the GCC. Designed Before Execution.";
@@ -190,7 +192,7 @@ function CoverageSection() {
                 />
               </div>
               <div className="flex items-center bg-[#071a1c] border-t border-b border-white/5 md:border-y-0 md:border-l md:border-white/10">
-                <div className="w-full max-w-xl mx-auto px-8 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+                <div className="w-full max-w-xl mx-auto px-8 py-16 sm:px-12 sm:py-20 lg:px-20 lg:py-24">
                   <p className="text-sm tracking-[0.26em] uppercase text-alo-muted mb-3">
                     Saudi Arabia
                   </p>
@@ -223,7 +225,7 @@ function CoverageSection() {
           <div className="relative w-screen left-1/2 -translate-x-1/2">
             <article className="grid min-h-[340px] lg:min-h-[440px] md:grid-cols-2">
               <div className="flex items-center bg-[#071a1c] border-t border-b border-white/5 md:border-y-0 md:border-r md:border-white/10">
-                <div className="w-full max-w-xl mx-auto px-8 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+                <div className="w-full max-w-xl mx-auto px-8 py-16 sm:px-12 sm:py-20 lg:px-20 lg:py-24">
                   <p className="text-sm tracking-[0.26em] uppercase text-alo-muted mb-3">
                     United Arab Emirates
                   </p>
@@ -331,47 +333,6 @@ function HowWeWorkSection() {
   );
 }
 
-const REPRESENTATIVE_CASES: Array<{
-  title: string;
-  image: string;
-  subheadings: string[];
-}> = [
-  {
-    title: "UK Wealth Advisory → Saudi",
-    image:
-      "https://images.pexels.com/photos/5668886/pexels-photo-5668886.jpeg?auto=compress&cs=tinysrgb&w=600",
-    subheadings: [
-      "Designed licence mapping assumptions",
-      "Governance alignment",
-      "Sequencing roadmap",
-      "Counsel brief pack",
-      "Outcome: Blueprint approved before legal submission"
-    ]
-  },
-  {
-    title: "UK Fintech → UAE",
-    image:
-      "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600",
-    subheadings: [
-      "Activity mapping to DFSA categories",
-      "Controlled function design",
-      "Structured engagement plan",
-      "Outcome: Clear regulator pathway defined pre-legal"
-    ]
-  },
-  {
-    title: "Cross-Border Governance Uplift",
-    image:
-      "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600",
-    subheadings: [
-      "Operating model design",
-      "Compliance structure",
-      "Risk register",
-      "Outcome: Internal readiness improved before submission"
-    ]
-  }
-];
-
 function EngagementsSection() {
   return (
     <PageSection
@@ -385,14 +346,17 @@ function EngagementsSection() {
           title="Case Studies"
         />
       </Reveal>
-      <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 md:gap-8">
-        {REPRESENTATIVE_CASES.map((caseStudy, index) => (
-          <Reveal key={caseStudy.title} delay={index * 80}>
-            <article className="group panel flex flex-col overflow-hidden transition-all duration-slow ease-linear hover:border-white/10 hover:border-t-alo-gold/40">
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 md:gap-8 md:items-stretch">
+        {CASE_STUDIES.map((caseStudy, index) => (
+          <Reveal key={caseStudy.slug} delay={index * 80} className="h-full min-h-0">
+            <Link
+              href={`/case-studies/${caseStudy.slug}`}
+              className="group panel flex h-full flex-col overflow-hidden transition-all duration-slow ease-linear hover:border-white/10 hover:border-t-alo-gold/40 cursor-pointer"
+            >
               <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-alo-panel">
                 <Image
                   src={caseStudy.image}
-                  alt=""
+                  alt={caseStudy.imageAlt}
                   fill
                   className="object-cover transition-transform duration-slow ease-linear group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -401,11 +365,6 @@ function EngagementsSection() {
                   className="absolute inset-0 bg-gradient-to-t from-alo-bg/70 via-transparent to-transparent"
                   aria-hidden
                 />
-                <div className="absolute top-4 left-4 sm:top-5 sm:left-5">
-                  <span className="text-[0.65rem] tracking-[0.22em] uppercase text-alo-gold/90 font-medium">
-                    Case Study {index + 1}
-                  </span>
-                </div>
               </div>
               <div className="flex flex-col gap-4 p-5 sm:p-6 flex-1 min-h-0">
                 <h3 className="text-xl sm:text-2xl font-serif text-alo-text leading-tight tracking-tight">
@@ -415,35 +374,11 @@ function EngagementsSection() {
                   className="h-px w-10 bg-alo-gold/80 shrink-0"
                   aria-hidden="true"
                 />
-                <ul className="space-y-3 text-base sm:text-lg text-alo-muted">
-                  {caseStudy.subheadings.map((item) => {
-                    const isOutcome = item.startsWith("Outcome:");
-                    if (isOutcome) {
-                      const [, rest] = item.split("Outcome:");
-                      return (
-                        <li
-                          key={item}
-                          className="pt-2 border-t border-white/5 text-alo-text"
-                        >
-                          <span className="font-medium text-alo-gold/90">
-                            Outcome
-                          </span>
-                          <span className="text-alo-muted">{rest}</span>
-                        </li>
-                      );
-                    }
-                    return (
-                      <li
-                        key={item}
-                        className="font-medium text-alo-text/90 text-base"
-                      >
-                        {item}
-                      </li>
-                    );
-                  })}
-                </ul>
+                <p className="text-sm sm:text-base text-alo-muted leading-relaxed">
+                  {caseStudy.cardTeaser}
+                </p>
               </div>
-            </article>
+            </Link>
           </Reveal>
         ))}
       </div>

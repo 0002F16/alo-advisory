@@ -8,11 +8,145 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const HERO_IMAGES = ["/hero-bg.jpg", "/hero-bg-2.jpg", "/hero-bg-3.jpg"];
 
-const WHAT_WE_OFFER_ITEMS = [
-  "Role scoping",
-  "Compliance & governance hiring",
-  "Structured onboarding plan",
-  "Delivered via specialist talent capability"
+function IconRoleScope() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M12 3v18M3 12h18M8 8l8 8M16 8l-8 8" />
+      <circle cx="12" cy="12" r="2.5" />
+    </svg>
+  );
+}
+
+function IconGovernance() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
+
+function IconOnboarding() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M4 19v-3h4v3M4 14v-3h4v3M4 9V6h4v3M14 19v-3h6v3M14 14v-3h6v3M14 9V6h6v3" />
+    </svg>
+  );
+}
+
+function IconCapability() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+      <path d="M12 12v4M10 14h4" />
+    </svg>
+  );
+}
+
+const TALENT_ICONS = [
+  IconRoleScope,
+  IconGovernance,
+  IconOnboarding,
+  IconCapability
+] as const;
+
+type TalentSection = {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  detail?: string[];
+};
+
+const TALENT_SECTIONS: TalentSection[] = [
+  {
+    id: "role-scoping",
+    number: "01",
+    title: "Role scoping",
+    description:
+      "Define the right roles and responsibilities before you hire. We align role design with your target operating model and regulatory expectations so every hire carries clear accountability.",
+    detail: [
+      "Role design aligned to licence and governance requirements",
+      "Accountability mapping and handover boundaries",
+      "Specifications that support rigorous hiring and onboarding"
+    ]
+  },
+  {
+    id: "compliance-governance-hiring",
+    number: "02",
+    title: "Compliance & governance hiring",
+    description:
+      "Identify and place governance, compliance and risk talent that meets regulator expectations. From MLRO and Compliance Officer to board-ready non-execs, we support hiring that strengthens your control environment.",
+    detail: [
+      "Regulator-aligned profiles and assessment criteria",
+      "Governance, compliance and risk specialist recruitment",
+      "Fit-for-purpose hiring once approval is secured"
+    ]
+  },
+  {
+    id: "structured-onboarding",
+    number: "03",
+    title: "Structured onboarding plan",
+    description:
+      "Get new hires to full effectiveness faster. We design and support structured onboarding—induction, training, handover and first 90-day milestones—so governance and compliance roles land cleanly.",
+    detail: [
+      "Induction and regulatory training sequencing",
+      "Handover and knowledge transfer protocols",
+      "First 90-day milestones and sign-off"
+    ]
+  },
+  {
+    id: "specialist-talent-capability",
+    number: "04",
+    title: "Delivered via specialist talent capability",
+    description:
+      "Talent support is delivered by ALO's specialist talent capability: same standards, same confidentiality, no separate brand. Integrated into your expansion programme, not bolted on.",
+    detail: [
+      "Single point of contact within ALO Advisory Group",
+      "Confidential, regulator-aware process",
+      "Aligned to your licensing and governance timeline"
+    ]
+  }
 ];
 
 export const metadata: Metadata = {
@@ -33,13 +167,9 @@ export default function TalentPage() {
               <p className="text-xs tracking-[0.22em] uppercase text-alo-muted mb-4">
                 Talent
               </p>
-              <h1 className="mb-6">
+              <h1 className="mb-8">
                 Operational Build & Talent Enablement
               </h1>
-              <div
-                className="h-px w-16 bg-alo-gold mb-8"
-                aria-hidden="true"
-              />
               <p className="max-w-xl">
                 Talent enablement is an integrated capability within ALO
                 Advisory Group, supporting governance and compliance hiring
@@ -59,45 +189,77 @@ export default function TalentPage() {
         <PageSection
           id="what-we-offer"
           aria-label="What we offer"
-          borderedTop
+          smallGapBelow
         >
           <Reveal>
-            <SectionHeader title="What we offer" />
+            <SectionHeader
+              eyebrow="How we support you"
+              title="What we offer"
+            />
           </Reveal>
-          <ul className="space-y-0 max-w-2xl">
-            {WHAT_WE_OFFER_ITEMS.map((item, index) => (
-              <Reveal key={item} delay={index * 80}>
-                <li className="py-4 border-b border-white/5 last:border-b-0 flex items-center gap-3">
-                  <span
-                    className="h-px w-8 bg-alo-gold/80 shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="text-alo-text">{item}</span>
-                </li>
-              </Reveal>
-            ))}
-          </ul>
-        </PageSection>
+          <p className="max-w-2xl text-alo-muted text-sm sm:text-base leading-relaxed mb-16 md:mb-20">
+            Talent enablement runs through four connected areas: scoping roles,
+            hiring for compliance and governance, onboarding with structure, and
+            delivery via a dedicated specialist capability—all under the ALO
+            Advisory Group umbrella.
+          </p>
 
-        <PageSection
-          id="positioning"
-          aria-label="Positioning"
-          borderedTop
-        >
-          <Reveal>
-            <div className="panel p-6 sm:p-8 max-w-2xl border-l-4 border-alo-gold">
-              <p className="text-alo-text">
-                Never presented as a second company. No separate branding.
-                Talent enablement is part of ALO Advisory Group.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            {TALENT_SECTIONS.map((section, index) => {
+              const Icon = TALENT_ICONS[index];
+              return (
+                <Reveal key={section.id} delay={index * 80}>
+                  <article
+                    id={section.id}
+                    aria-labelledby={`${section.id}-title`}
+                    className="panel flex h-full flex-col p-6 sm:p-8 border-l-4 border-l-alo-gold/50 transition-all duration-slow ease-linear hover:border-l-alo-gold/80 hover:shadow-[0_20px_56px_rgba(0,0,0,0.5)]"
+                  >
+                    <div
+                      className="flex h-12 w-12 items-center justify-center rounded-lg bg-alo-gold/10 text-alo-gold mb-5"
+                      aria-hidden
+                    >
+                      {Icon ? <Icon /> : null}
+                    </div>
+                    <span
+                      className="font-serif text-xl text-alo-gold/50 tracking-tight"
+                      aria-hidden="true"
+                    >
+                      {section.number}
+                    </span>
+                    <h2
+                      id={`${section.id}-title`}
+                      className="mt-2 font-serif text-xl sm:text-2xl text-alo-text leading-tight tracking-tight"
+                    >
+                      {section.title}
+                    </h2>
+                    <p className="mt-4 text-alo-muted text-sm leading-relaxed flex-1">
+                      {section.description}
+                    </p>
+                    <ul className="mt-5 space-y-2" role="list">
+                      {section.detail?.map((item) => (
+                        <li
+                          key={item}
+                          className="flex gap-2.5 text-alo-muted text-[0.9rem] leading-relaxed"
+                        >
+                          <span
+                            className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-alo-gold/70"
+                            aria-hidden
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Reveal>
+              );
+            })}
+          </div>
         </PageSection>
 
         <PageSection
           id="contact"
           aria-label="Final call to action"
-          borderedTop
+          smallGapAbove
         >
           <Reveal>
             <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">

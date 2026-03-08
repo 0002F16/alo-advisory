@@ -5,6 +5,10 @@ interface PageSectionProps {
   "aria-label"?: string;
   borderedTop?: boolean;
   tight?: boolean;
+  tighter?: boolean;
+  tightBottom?: boolean;
+  smallGapAbove?: boolean;
+  smallGapBelow?: boolean;
   children: ReactNode;
 }
 
@@ -13,14 +17,32 @@ export function PageSection({
   "aria-label": ariaLabel,
   borderedTop,
   tight,
+  tighter,
+  tightBottom,
+  smallGapAbove,
+  smallGapBelow,
   children
 }: PageSectionProps) {
-  const padding = tight ? "py-14 md:py-20" : "py-24 md:py-32";
+  let pt = "pt-24 md:pt-32";
+  let pb = "pb-24 md:pb-32";
+  if (tighter) {
+    pt = "pt-8 md:pt-12";
+    pb = "pb-8 md:pb-12";
+  } else if (tight) {
+    pt = "pt-14 md:pt-20";
+    pb = "pb-14 md:pb-20";
+  }
+  if (tightBottom) {
+    pb = tighter ? "pb-4 md:pb-6" : tight ? "pb-7 md:pb-10" : "pb-12 md:pb-16";
+  }
+  if (smallGapAbove) pt = "pt-6 md:pt-8";
+  if (smallGapBelow) pb = "pb-6 md:pb-8";
+  const paddingClass = `${pt} ${pb}`;
   return (
     <section
       id={id}
       aria-label={ariaLabel}
-      className={`${padding} ${borderedTop ? "border-t border-white/5" : ""}`}
+      className={`${paddingClass} ${borderedTop ? "border-t border-white/5" : ""}`}
     >
       <div className="container">{children}</div>
     </section>
