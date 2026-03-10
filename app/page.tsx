@@ -92,7 +92,7 @@ const WHAT_WE_DO_HERO = {
   subheading:
     "We design licensing structure, entity setup and sequencing so execution follows a single blueprint. No guesswork, no overlap. The plan is locked before legal spend begins.",
   image:
-    "https://images.pexels.com/photos/4427630/pexels-photo-4427630.jpeg?auto=compress&cs=tinysrgb&w=800"
+    "/world-map-connections.png"
 };
 
 const WHAT_WE_DO_SUPPORTING: Array<{ title: string; subheading: string }> = [

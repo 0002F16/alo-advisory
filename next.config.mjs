@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/photos/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/photo-**",
+      },
     ],
   },
   // Reduce Safari stale-chunk issues: avoid aggressive caching of JS chunks on localhost

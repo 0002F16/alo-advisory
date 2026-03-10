@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageSection } from "@/components/layout/PageSection";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ButtonLink } from "@/components/common/Button";
@@ -23,6 +24,9 @@ const OFFERINGS = [
   },
 ];
 
+const HERO_DESERT_IMAGE =
+  "https://images.pexels.com/photos/30710159/pexels-photo-30710159.jpeg?auto=compress&cs=tinysrgb&w=1920";
+
 const RISK_CONTROL_BODY =
   "Saudi entries often fail on misaligned mapping, governance gaps, and bad sequencing. We build architecture to avoid them—design-first, not reaction. Clear handoffs, decision rights, and checkpoints keep the expansion aligned from discovery through post-licence.";
 
@@ -40,29 +44,27 @@ export default function SaudiPage() {
         className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 min-h-[88vh] flex flex-col justify-center overflow-hidden"
         aria-label="Saudi expansion hero"
       >
-        {/* Background: deep gradient + diagonal gold accent (no photo) */}
+        {/* Background: desert image */}
+        <Image
+          src={HERO_DESERT_IMAGE}
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+        {/* Gold overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#060a0c] via-alo-bg to-[#0a1218]"
+          className="absolute inset-0 bg-alo-gold/40"
           aria-hidden
         />
+        {/* Gradient: transition into default bg */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23C6A75E' fill-opacity='1'/%3E%3C/svg%3E")`,
-          }}
+          className="absolute inset-0 bg-gradient-to-b from-black/20 via-alo-bg/60 to-alo-bg"
           aria-hidden
         />
-        <div
-          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-alo-gold/50 to-transparent"
-          aria-hidden
-        />
-        <div
-          className="absolute top-1/2 right-0 w-[40vw] max-w-[480px] h-[1px] bg-alo-gold/30 origin-right rotate-[-12deg] hidden lg:block"
-          aria-hidden
-        />
-
         <div className="container relative z-10 px-6 md:px-8 lg:px-10 pt-20 pb-24 md:pt-24 md:pb-32">
-          <div className="grid lg:grid-cols-[1fr_auto] lg:gap-16 xl:gap-24 items-end">
+          <div>
             <div className="max-w-3xl">
               <Reveal>
                 <p className="text-xs tracking-[0.28em] uppercase text-alo-gold/90 mb-5">
@@ -95,11 +97,6 @@ export default function SaudiPage() {
                 </ButtonLink>
               </Reveal>
             </div>
-            <Reveal delay={240} className="hidden lg:block lg:pb-2">
-              <p className="text-sm tracking-[0.2em] uppercase text-alo-muted/80 max-w-[220px] text-right">
-                Primary institutional focus: Riyadh
-              </p>
-            </Reveal>
           </div>
         </div>
       </header>

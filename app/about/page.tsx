@@ -34,7 +34,7 @@ export default function AboutPage() {
         aria-label="About ALO hero"
       >
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#060a0c] via-alo-bg to-[#0a1218]"
+          className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0d1b36] to-alo-bg"
           aria-hidden
         />
         <div
@@ -44,15 +44,6 @@ export default function AboutPage() {
           }}
           aria-hidden
         />
-        <div
-          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-alo-gold/50 to-transparent"
-          aria-hidden
-        />
-        <div
-          className="absolute top-1/2 right-0 w-[40vw] max-w-[480px] h-[1px] bg-alo-gold/30 origin-right rotate-[-12deg] hidden lg:block"
-          aria-hidden
-        />
-
         <div className="container relative z-10 px-6 md:px-8 lg:px-10 pt-20 pb-24 md:pt-24 md:pb-32 flex flex-col items-center text-center">
           <div className="max-w-4xl mx-auto">
             <Reveal>
@@ -86,7 +77,7 @@ export default function AboutPage() {
       </header>
 
       <main>
-        <PageSection id="who-we-are" aria-label="Who we are" borderedTop>
+        <PageSection id="who-we-are" aria-label="Who we are">
           <div className="grid gap-10 lg:grid-cols-[1fr_minmax(320px,480px)] lg:gap-16 lg:items-start">
             <div className="space-y-6">
               <Reveal>
