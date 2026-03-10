@@ -211,10 +211,10 @@ export default function AboutPage() {
           <Reveal>
             <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl space-y-3">
-                <h2 className="text-2xl sm:text-[28px] font-serif">
+                <h2 className="text-3xl sm:text-4xl md:text-[2.25rem] font-serif leading-tight tracking-tight">
                   Cross-border expansion, designed before execution.
                 </h2>
-                <p>
+                <p className="text-lg sm:text-xl text-alo-muted">
                   Licensing pathway, structure, governance and sequencing
                   locked before legal spend begins.
                 </p>

@@ -8,6 +8,7 @@ interface PageSectionProps {
   tighter?: boolean;
   tightBottom?: boolean;
   smallGapAbove?: boolean;
+  minimalGapAbove?: boolean;
   smallGapBelow?: boolean;
   children: ReactNode;
 }
@@ -20,6 +21,7 @@ export function PageSection({
   tighter,
   tightBottom,
   smallGapAbove,
+  minimalGapAbove,
   smallGapBelow,
   children
 }: PageSectionProps) {
@@ -35,7 +37,8 @@ export function PageSection({
   if (tightBottom) {
     pb = tighter ? "pb-4 md:pb-6" : tight ? "pb-7 md:pb-10" : "pb-12 md:pb-16";
   }
-  if (smallGapAbove) pt = "pt-6 md:pt-8";
+  if (minimalGapAbove) pt = "pt-0";
+  else if (smallGapAbove) pt = "pt-6 md:pt-8";
   if (smallGapBelow) pb = "pb-6 md:pb-8";
   const paddingClass = `${pt} ${pb}`;
   return (

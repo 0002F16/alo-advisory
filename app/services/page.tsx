@@ -3,7 +3,6 @@ import { PageSection } from "@/components/layout/PageSection";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ButtonLink } from "@/components/common/Button";
 import { Reveal } from "@/components/common/Reveal";
-import { HeroBackground } from "@/components/hero/HeroBackground";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 type EngagementPlan = {
@@ -81,23 +80,16 @@ export const metadata: Metadata = {
     "Strategic Discovery (free), Readiness Diagnostic, Expansion Architecture and Oversight Retainer. Clear pricing and scope for GCC expansion."
 };
 
-const SERVICES_HERO_IMAGES = [
-  "https://images.pexels.com/photos/5668886/pexels-photo-5668886.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "https://images.pexels.com/photos/3182765/pexels-photo-3182765.jpeg?auto=compress&cs=tinysrgb&w=1200"
-];
-
 export default function ServicesPage() {
   return (
     <>
       <header
         id="intro"
         aria-label="Engagement model hero"
-        className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 pt-16 md:pt-24 pb-28 md:pb-36 min-h-[55vh] flex flex-col justify-center overflow-hidden"
+        className="relative w-screen left-1/2 -translate-x-1/2 -mt-16 pt-20 md:pt-28 pb-28 md:pb-36 min-h-[65vh] flex flex-col justify-center overflow-hidden"
       >
-        <HeroBackground images={SERVICES_HERO_IMAGES} />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-alo-bg/85 via-alo-bg/75 to-alo-bg"
+          className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0d1b36] to-alo-bg"
           aria-hidden
         />
         <div className="container relative z-10 px-6 md:px-8 lg:px-10">
@@ -106,14 +98,10 @@ export default function ServicesPage() {
               <p className="text-xs tracking-[0.28em] uppercase text-alo-gold/90 mb-5">
                 Engagement Model
               </p>
-              <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4rem] font-serif text-alo-text leading-[1.1] tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4rem] font-serif text-alo-text leading-[1.1] tracking-tight mb-8">
                 Clear scope. Clear pricing.
               </h1>
-              <div
-                className="h-px w-14 bg-alo-gold/80 mb-8"
-                aria-hidden="true"
-              />
-              <p className="text-lg sm:text-xl md:text-2xl text-alo-muted max-w-xl leading-relaxed mb-10">
+              <p className="text-lg sm:text-xl text-alo-muted max-w-xl leading-relaxed mb-10">
                 A simple four-step model: discovery, diagnostic, architecture,
                 oversight. You know exactly what you&apos;re buying before we
                 begin.
@@ -290,10 +278,10 @@ export default function ServicesPage() {
           <Reveal>
             <div className="panel px-6 py-8 sm:px-8 sm:py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl space-y-3">
-                <h2 className="text-2xl sm:text-[28px] font-serif">
+                <h2 className="text-3xl sm:text-4xl md:text-[2.25rem] font-serif leading-tight tracking-tight">
                   Ready to start with a discovery call?
                 </h2>
-                <p>
+                <p className="text-lg sm:text-xl text-alo-muted">
                   Free 30-minute Strategic Discovery, no commitment.
                 </p>
               </div>

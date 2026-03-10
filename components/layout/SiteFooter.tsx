@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandLogo } from "@/components/common/BrandLogo";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "What we do", href: "#what-we-do" },
@@ -17,7 +17,13 @@ export function SiteFooter() {
       <div className="container px-6 md:px-8 lg:px-10 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 md:gap-12">
           <div className="space-y-4 max-w-xs">
-            <BrandLogo variant="compact" />
+            <Image
+              src="/footer-logo.png"
+              alt="ALO Advisory Group logo"
+              width={80}
+              height={80}
+              className="h-12 w-12 md:h-14 md:w-14 object-contain"
+            />
             <p className="text-[0.7rem] tracking-[0.26em] uppercase text-alo-muted">
               ALO Advisory Group
             </p>

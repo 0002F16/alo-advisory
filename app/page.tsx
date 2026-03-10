@@ -8,8 +8,7 @@ import { HeroBackground } from "@/components/hero/HeroBackground";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
-const HERO_HEADLINE =
-  "Cross-Border Expansion Into the GCC. Designed Before Execution.";
+const HERO_HEADLINE = "Cross-Border Expansion Into the GCC.";
 const HERO_SUBTEXT =
   "We design regulatory expansion architecture for UK firms entering key GCC jurisdictions.";
 
@@ -35,7 +34,7 @@ export default function Page() {
                 className="h-px w-16 bg-alo-gold mb-8"
                 aria-hidden="true"
               />
-              <p className="text-xl sm:text-2xl md:text-3xl whitespace-pre-line max-w-xl text-alo-muted">
+              <p className="text-lg sm:text-xl md:text-2xl whitespace-pre-line max-w-xl text-alo-muted">
                 {HERO_SUBTEXT}
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
