@@ -12,7 +12,13 @@ const HERO_HEADLINE = "Cross-Border Expansion Into the GCC.";
 const HERO_SUBTEXT =
   "We design regulatory expansion architecture for UK firms entering key GCC jurisdictions.";
 
-const HERO_IMAGES = ["/hero-bg.jpg", "/hero-bg-2.jpg", "/hero-bg-3.jpg"];
+const HERO_IMAGES = [
+  "/hero-bg.jpg",
+  "/hero-bg-2.jpg",
+  "/hero-bg-3.jpg",
+  "/hero-bg-4.jpg",
+  "/hero-bg-5.jpg"
+];
 
 export default function Page() {
   return (
@@ -21,6 +27,8 @@ export default function Page() {
         {/* Full-bleed background: cycling images with slow zoom + overlay */}
         <HeroBackground images={HERO_IMAGES} />
         <div className="absolute inset-0 bg-alo-bg/70" aria-hidden />
+        {/* Bottom edge-to-bg transition gradient */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-alo-bg to-transparent pointer-events-none" aria-hidden />
         <div className="container relative z-10 px-6 md:px-8 lg:px-10">
           <Reveal>
             <div className="max-w-3xl">
