@@ -16,8 +16,7 @@ const HERO_IMAGES = [
   "/hero-bg.jpg",
   "/hero-bg-2.jpg",
   "/hero-bg-3.jpg",
-  "/hero-bg-4.jpg",
-  "/hero-bg-5.jpg"
+  "/hero-bg-4.jpg"
 ];
 
 export default function Page() {
