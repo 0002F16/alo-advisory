@@ -72,7 +72,7 @@ export default function Header() {
                 ))}
               </ul>
               <div className="ml-4">
-                <ButtonLink href="/contact" variant="primary">
+                <ButtonLink href="/call" variant="primary">
                   Get in Touch
                 </ButtonLink>
               </div>
@@ -129,7 +129,7 @@ export default function Header() {
             ))}
           </ul>
           <div className="mt-auto pt-12 pb-8">
-            <ButtonLink href="/contact" variant="primary" className="w-full sm:w-auto">
+            <ButtonLink href="/call" variant="primary" className="w-full sm:w-auto">
               Get in Touch
             </ButtonLink>
           </div>

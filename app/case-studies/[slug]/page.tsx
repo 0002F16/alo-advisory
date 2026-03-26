@@ -8,7 +8,7 @@ import {
 } from "@/lib/case-studies";
 import { PageSection } from "@/components/layout/PageSection";
 import { Reveal } from "@/components/common/Reveal";
-import { Button } from "@/components/common/Button";
+import { ButtonLink } from "@/components/common/Button";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import type { Metadata } from "next";
 
@@ -185,7 +185,9 @@ export default async function CaseStudyPage({
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-              <Button type="button">Book a Discovery Call</Button>
+              <ButtonLink href="/call" variant="primary">
+                Book a Discovery Call
+              </ButtonLink>
             </div>
           </div>
         </Reveal>

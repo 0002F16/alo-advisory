@@ -4,19 +4,12 @@ import { PageSection } from "@/components/layout/PageSection";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ButtonLink } from "@/components/common/Button";
 import { Reveal } from "@/components/common/Reveal";
-import { FounderPortrait } from "@/components/about/FounderPortrait";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
-const FOUNDER_ITEMS = [
-  "Risk and regulatory project delivery",
-  "Governance programmes",
-  "Structured enterprise implementation",
-  "Cross-border sequencing discipline"
-];
-
-const FOUNDER_STATEMENTS = [
-  "Expansion architecture designed before execution. Legal spend follows a blueprint, not guesswork.",
-  "We do not provide legal or tax advice. Legal and tax services are delivered by licensed specialists. ALO Advisory Group designs and oversees expansion architecture."
+const FOUNDER_PARAGRAPHS = [
+  "James Emmanuel is the Founder of Alo Advisory Group, a cross-border expansion advisory firm focused on helping regulated organisations expand into new international markets through structured regulatory architecture and disciplined programme delivery.",
+  "Over the course of his career, James has worked across risk, regulatory, and enterprise delivery environments, supporting complex programmes within large organisations operating in highly regulated industries. His work has involved coordinating senior stakeholders, compliance teams, and operational functions to deliver initiatives where governance, regulatory alignment, and execution discipline are essential.",
+  "Drawing on this experience, Alo Advisory Group was established to support firms navigating the complexities of international expansion. The firm focuses on designing licensing pathways, governance structures, and execution sequencing before implementation begins, enabling organisations to approach new markets with greater clarity, structure, and reduced regulatory risk."
 ];
 
 export const metadata: Metadata = {
@@ -68,7 +61,7 @@ export default function AboutPage() {
               </p>
             </Reveal>
             <Reveal delay={240}>
-              <ButtonLink href="/contact" variant="primary" className="inline-flex">
+              <ButtonLink href="/call" variant="primary" className="inline-flex">
                 Book a Discovery Call
               </ButtonLink>
             </Reveal>
@@ -158,51 +151,35 @@ export default function AboutPage() {
 
         <PageSection id="founder" aria-label="Founder" borderedTop>
           <Reveal>
-            <SectionHeader title="About our Founder" />
+            <SectionHeader title="About the Founder" />
           </Reveal>
-          <div className="grid gap-10 md:grid-cols-[340px_1fr] lg:grid-cols-[400px_1fr] lg:gap-16 items-start">
-            <Reveal delay={80} className="shrink-0">
-              <FounderPortrait />
-            </Reveal>
-            <div className="min-w-0 space-y-8">
-              <Reveal delay={120}>
+
+          {/* Editorial founder layout — no portrait */}
+          <div className="mt-10 max-w-3xl">
+            {/* Name block */}
+            <Reveal delay={80}>
+              <div className="flex items-end gap-6 mb-10">
                 <div>
-                  <h3 className="text-2xl sm:text-[28px] font-serif text-alo-text mb-2">
-                    EJ Alo
+                  <h3 className="text-3xl sm:text-4xl font-serif text-alo-text leading-none mb-2">
+                    James Emmanuel
                   </h3>
-                  <p className="text-xs tracking-[0.22em] uppercase text-alo-muted">
-                    Founder & Principal
+                  <p className="text-xs tracking-[0.28em] uppercase text-alo-gold">
+                    Founder, Alo Advisory Group
                   </p>
                 </div>
-              </Reveal>
-              <Reveal delay={160}>
-                <p className="text-alo-muted text-sm">Experience in:</p>
-                <ul className="space-y-2 max-w-xl mt-2">
-                  {FOUNDER_ITEMS.map((item, index) => (
-                    <li key={item} className="text-alo-text flex items-start gap-3">
-                      <span
-                        className="h-px w-6 bg-alo-gold/80 shrink-0 mt-2.5"
-                        aria-hidden="true"
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              <Reveal delay={200}>
-                <div className="space-y-4">
-                  {FOUNDER_STATEMENTS.map((statement) => (
-                    <blockquote
-                      key={statement.slice(0, 40)}
-                      className="border-l-4 border-alo-gold pl-5 sm:pl-6 not-italic"
-                    >
-                      <p className="text-alo-text text-sm sm:text-base leading-relaxed">
-                        {statement}
-                      </p>
-                    </blockquote>
-                  ))}
-                </div>
-              </Reveal>
+                <div className="flex-1 h-px bg-alo-gold/30 mb-1" aria-hidden="true" />
+              </div>
+            </Reveal>
+
+            {/* Bio paragraphs */}
+            <div className="space-y-7">
+              {FOUNDER_PARAGRAPHS.map((para, i) => (
+                <Reveal key={i} delay={120 + i * 60}>
+                  <p className="text-alo-text text-base sm:text-lg leading-relaxed">
+                    {para}
+                  </p>
+                </Reveal>
+              ))}
             </div>
           </div>
         </PageSection>
@@ -220,7 +197,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <ButtonLink href="/contact" variant="primary">
+                <ButtonLink href="/call" variant="primary">
                   Book a Discovery Call
                 </ButtonLink>
               </div>

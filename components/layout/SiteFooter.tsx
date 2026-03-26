@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "What we do", href: "#what-we-do" },
-  { label: "Coverage", href: "#coverage" },
-  { label: "How we work", href: "#how-we-work" },
-  { label: "Engagements", href: "#engagements" },
-  { label: "Contact", href: "#contact" }
+  { label: "Services", href: "/services" },
+  { label: "UAE Market Entry", href: "/uae" },
+  { label: "Saudi Market Entry", href: "/saudi" },
+  { label: "Talent Strategy", href: "/talent" },
+  { label: "About ALO", href: "/about" },
+  { label: "Contact", href: "/contact" }
 ];
 
 export function SiteFooter() {
@@ -65,7 +66,7 @@ export function SiteFooter() {
             </p>
             <div>
               <a
-                href="mailto:hello@aloadvisory.com"
+                href="mailto:Jamesemmanuel@aloadvisorygroup.com"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[0.8rem] text-alo-text transition-colors duration-slow ease-linear hover:border-alo-gold hover:bg-alo-gold hover:text-black focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
               >
                 Email ALO
@@ -79,27 +80,12 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[0.7rem] text-alo-muted">
+        <div className="mt-10 pt-6 border-t border-white/5 text-[0.7rem] text-alo-muted">
           <p>
             © {year} ALO Advisory Group. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <button
-              type="button"
-              className="text-[0.7rem] underline-link text-alo-muted hover:text-alo-text focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
-            >
-              Terms
-            </button>
-            <button
-              type="button"
-              className="text-[0.7rem] underline-link text-alo-muted hover:text-alo-text focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-alo-gold"
-            >
-              Privacy
-            </button>
-          </div>
         </div>
       </div>
     </footer>
   );
 }
-

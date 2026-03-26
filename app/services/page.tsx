@@ -106,7 +106,7 @@ export default function ServicesPage() {
                 oversight. You know exactly what you&apos;re buying before we
                 begin.
               </p>
-              <ButtonLink href="/contact" variant="primary">
+              <ButtonLink href="/call" variant="primary">
                 Book a Discovery Call
               </ButtonLink>
             </div>
@@ -140,7 +140,6 @@ export default function ServicesPage() {
         <PageSection
           id="engagement-model"
           aria-label="Engagement model"
-          borderedTop
         >
           <Reveal>
             <SectionHeader
@@ -193,7 +192,7 @@ export default function ServicesPage() {
                     aria-hidden
                   />
                   <ButtonLink
-                    href="/contact"
+                    href="/call"
                     variant="primary"
                     className="mt-4 w-full sm:w-auto"
                   >
@@ -286,7 +285,7 @@ export default function ServicesPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <ButtonLink href="/contact" variant="primary">
+                <ButtonLink href="/call" variant="primary">
                   Book a Discovery Call
                 </ButtonLink>
               </div>

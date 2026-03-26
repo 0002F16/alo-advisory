@@ -93,7 +93,7 @@ export default function UaePage() {
                 </p>
               </Reveal>
               <Reveal delay={280}>
-                <ButtonLink href="/contact" variant="primary">
+                <ButtonLink href="/call" variant="primary">
                   Book UAE Discovery Call
                 </ButtonLink>
               </Reveal>
@@ -152,7 +152,7 @@ export default function UaePage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <ButtonLink href="/contact" variant="primary">
+                <ButtonLink href="/call" variant="primary">
                   Book UAE Discovery Call
                 </ButtonLink>
               </div>

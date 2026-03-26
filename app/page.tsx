@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageSection } from "@/components/layout/PageSection";
 import { SectionHeader } from "@/components/common/SectionHeader";
-import { Button, ButtonLink } from "@/components/common/Button";
+import { ButtonLink } from "@/components/common/Button";
 import { Reveal } from "@/components/common/Reveal";
 import { HeroBackground } from "@/components/hero/HeroBackground";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -45,11 +45,8 @@ export default function Page() {
                 {HERO_SUBTEXT}
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
-                <Button type="button">
+                <ButtonLink href="/call" variant="primary">
                   Book a Discovery Call
-                </Button>
-                <ButtonLink href="#gcc-readiness" variant="secondaryLink">
-                  Download GCC Readiness Checklist
                 </ButtonLink>
               </div>
             </div>
@@ -411,13 +408,12 @@ function FinalCtaSection() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-            <Button type="button">
+            <ButtonLink href="/call" variant="primary">
               Book a Discovery Call
-            </Button>
+            </ButtonLink>
           </div>
         </div>
       </Reveal>
     </PageSection>
   );
 }
-
